@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"> </script>
+    <title>Document</title>
+    
+    <!-- <style>
+        table {
+            border: 1px solid black;
+            width: 800px;
+        }
+        th,td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style> -->
+    
+</head>
+<body>
+<?php
+$res=[
+    [
+    "id"=> 1,
+    "title" => "Buy milk 1",
+    "startDate" => "2012-04-23T18:25:43.511Z",
+    "endDate"=> "2012-04-23T18:25:43.511Z",
+    "user"=> "Jane",
+    "status" => "Doing 1"
+    ],
+    [
+    "id"=> 2,
+    "title" => "Buy milk 2",
+    "startDate" => "2012-04-23T18:25:43.511Z",
+    "endDate"=> "2012-04-23T18:25:43.511Z",
+    "user"=> "Jane",
+    "status" => "Doing 2"
+    ],
+    [
+    "id"=> 3,
+    "title" => "Buy milk 3",
+    "startDate" => "2012-04-23T18:25:43.511Z",
+    "endDate"=> "2012-04-23T18:25:43.511Z",
+    "user"=> "Jane",
+    "status" => "Doing 3"
+    ]
+  
+];
+//var_dump($res);
+?>
+<form action="controllers/tasksController.php" method="post"> 
+<!-- <form action="index.php" method="post"> -->
+<div class="container mx-auto">
+<table class="table border-separate mt-40 ml-40">
+    <tr>
+        <th class="border border-gray-400 px-4 py-2">id</th>
+        <th class="border border-gray-400 px-4 py-2">Título</th>
+        <th class="border border-gray-400 px-4 py-2">Fecha Inicio</th>
+        <th class="border border-gray-400 px-4 py-2">Fecha Fin</th>
+        <th class="border border-gray-400 px-4 py-2">Usuario</th>
+        <th class="border border-gray-400 px-4 py-2">Estado</th>
+        <th colspan="2" class="border border-gray-400 px-4 py-2">Acciones</th>
+    </tr>
+
+    
+
+
+
+    <?php
+    foreach($res as $val){
+    ?>
+    
+
+
+
+    <tr class="bg-gray-400gr">
+        
+        <td class="border border-gray-400 px-4 py-2"><?php echo $val["id"]  ?> </td>
+        <td class="border border-gray-400 px-4 py-2"><?php echo $val["title"]  ?> </td>
+        <td class="border border-gray-400 px-4 py-2"><?php echo $val["startDate"]  ?> </td>
+        <td class="border border-gray-400 px-4 py-2"><?php echo $val["endDate"]  ?> </td>
+        <td class="border border-gray-400 px-4 py-2"><?php echo $val["user"]  ?> </td>
+        <td class="border border-gray-400 px-4 py-2"><?php echo $val["status"]  ?> </td>
+        <td class="border border-gray-400 px-4 py-2"><a href="./controllers/tasksController.php?action=delete&amp;id=<?php echo $val['id'] ?>">Delete  <?php echo $val['id'] ?></a></td>
+       
+        <td class="border border-gray-400 px-4 py-2"><a href="./controllers/tasksController.php?action=edit&amp;id=<?php echo $val['id'] ?>">Edit  <?php echo $val['id'] ?></a></td>
+    </tr>
+    <?php
+    }
+?>
+
+</table>
+</div>
+
+
+<button type="submit" name="insertar">
+    Insertar 
+    
+</button>
+
+
+
+
+</form>
+
+
+</body>
+</html>

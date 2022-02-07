@@ -17,6 +17,13 @@ session_start();
 // includes the system routes. Define your own routes in this file
 include(ROOT_PATH . '/config/routes.php');
 
+// echo "WEB_ROOT= " . WEB_ROOT ."<br>";
+// echo "ROOT_PATH= " . ROOT_PATH ."<br>";
+// echo "CMS_PATH= " . CMS_PATH ."<br>";
+// echo "ROOT-PATH= " .ROOT_PATH . "<br>";
+
+// exit();
+
 /**
  * Standard framework autoloader
  * @param string $className
@@ -46,3 +53,5 @@ spl_autoload_register('autoloader');
 
 $router = new Router();
 $router->execute($routes);
+
+
