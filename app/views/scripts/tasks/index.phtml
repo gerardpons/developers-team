@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"> </script>
+    <script src="https://cdn.tailwindcss.com" > </script>
     <title>Document</title>
     
-    <!-- <style>
-        table {
+    <style>
+        /* table {
             border: 1px solid black;
             width: 800px;
         }
         th,td {
             padding: 10px;
             border: 1px solid black;
+        } */
+        .link {
+            color:blue;
+            text-decoration: underline;
         }
-    </style> -->
+    </style>
     
 </head>
 <body>
@@ -83,22 +87,29 @@ $res=[
         <td class="border border-gray-400 px-4 py-2"><?php echo $val["endDate"]  ?> </td>
         <td class="border border-gray-400 px-4 py-2"><?php echo $val["user"]  ?> </td>
         <td class="border border-gray-400 px-4 py-2"><?php echo $val["status"]  ?> </td>
-        <td class="border border-gray-400 px-4 py-2"><a href="./controllers/tasksController.php?action=delete&amp;id=<?php echo $val['id'] ?>">Delete  <?php echo $val['id'] ?></a></td>
-       
-        <td class="border border-gray-400 px-4 py-2"><a href="./controllers/tasksController.php?action=edit&amp;id=<?php echo $val['id'] ?>">Edit  <?php echo $val['id'] ?></a></td>
+        
+        <td class="border border-gray-400 px-4 py-2 "><a class="link" href="http://localhost/dev/developers-team/web/taskedit?id=<?php echo $val['id']; ?>">Editar  <?php echo $val['id']; ?></a></td>
+
+        <td class="border border-gray-400 px-4 py-2 "><a class="link" href="http://localhost/dev/developers-team/web/taskdelete?id=<?php echo $val['id']; ?>">Eliminar  <?php echo $val['id']; ?></a></td>
     </tr>
     <?php
     }
 ?>
 
 </table>
+
+<a class="link px-4 py-2" href="http://localhost/dev/developers-team/web/taskinsert">Insertar</a>
+
+<br>
+
+<!-- <a class="link" href="http://localhost/dev/developers-team/web/tasks">Delete 2 </a> -->
+
+<br>
+
+
 </div>
 
 
-<button type="submit" name="insertar">
-    Insertar 
-    
-</button>
 
 
 

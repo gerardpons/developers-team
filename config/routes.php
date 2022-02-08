@@ -14,6 +14,10 @@ $routes = array(
 	'/jm' => 'jm#index',
 	'/leo' => 'jm#test',
 	'/tasks' => 'tasks#index',
-	'/taskDelete' => 'tasks#delete'
+	'/taskdelete' => 'tasks#delete',
+	'/taskedit' => 'taskedit#index',
+	'/taskinsert' => 'taskinsert#index',
+	'/taskinsertinsert' => 'taskinsert#insert',
+	'/tasksave' => 'taskEedit#save'
 	
 );

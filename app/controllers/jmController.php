@@ -5,8 +5,9 @@ class jmController extends ApplicationController
 	
 	public function indexAction()
 	{
-        $_GET['pepe']="1234";
-        echo "Hola desde el controlador <br>";
+        //$res = $_GET['prueba'];
+        //echo "Hola desde el controlador de jm res=". $res ."<br>";
+        echo "Hola desde el controlador de jm <br>";
        
         // $this->view->message = "hello from jm::index";
       

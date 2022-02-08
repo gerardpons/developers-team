@@ -31,11 +31,18 @@ class tasksController extends ApplicationController
     }
 
     public function deleteAction(){
-        echo "record deleted <br>";
+       
+        
         // llamar al modelo con el id
-        //volver a la vista
-        header('location:' . ROOT_PATH . "/app/views/tasks/index.phtml");
-        //header('location: ' . URL . 'songs/index');
+        $id = $_GET["id"];
+        echo "record deleted  $id<br>";
+        exit();
+
+
+        //volver a la vista    
+        header('location:' . "http://localhost/dev/developers-team/web/tasks");
+       
+        
     }
 }
 
