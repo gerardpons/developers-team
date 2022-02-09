@@ -1,15 +1,24 @@
 <?php
 
-class tasksController extends ApplicationController
+class TasksController extends ApplicationController
 {
 	
 	public function indexAction()
 	{
+
+        include ROOT_PATH . '/app/models/Tasks.class.php';
+
         //$_GET['pepe']="tasks eoeoeeo";
-        echo "Hola desde el controlador de tasks<br>";
+        echo "Hola desde el controlador de tasks 2<br>";
+
+        $model = new Tasks();
+        // $tasks = $model->getTasks();
+
+        require ROOT_PATH . '/app/views/scripts/tasks/index.phtml';
+
        
         // $this->view->message = "hello from jm::index";
-      
+
 	}
 	
 	public function checkAction()

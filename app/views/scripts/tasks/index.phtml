@@ -1,121 +1,74 @@
+<?php
+/*    $model = new Tasks();
+    $tasks = $model->getTasks();
+*/?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com" > </script>
-    <title>Document</title>
-    
-    <style>
-        /* table {
-            border: 1px solid black;
-            width: 800px;
-        }
-        th,td {
-            padding: 10px;
-            border: 1px solid black;
-        } */
-        .link {
-            color:blue;
-            text-decoration: underline;
-        }
-    </style>
-    
+    <title>Index View</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<?php
-$res=[
-    [
-    "id"=> 1,
-    "title" => "Buy milk 1",
-    "startDate" => "2012-04-23T18:25:43.511Z",
-    "endDate"=> "2012-04-23T18:25:43.511Z",
-    "user"=> "Jane",
-    "status" => "Doing 1"
-    ],
-    [
-    "id"=> 2,
-    "title" => "Buy milk 2",
-    "startDate" => "2012-04-23T18:25:43.511Z",
-    "endDate"=> "2012-04-23T18:25:43.511Z",
-    "user"=> "Jane",
-    "status" => "Doing 2"
-    ],
-    [
-    "id"=> 3,
-    "title" => "Buy milk 3",
-    "startDate" => "2012-04-23T18:25:43.511Z",
-    "endDate"=> "2012-04-23T18:25:43.511Z",
-    "user"=> "Jane",
-    "status" => "Doing 3"
-    ]
-  
-];
-//var_dump($res);
-?>
-<form action="controllers/tasksController.php" method="post"> 
-<!-- <form action="index.php" method="post"> -->
-<div class="container mx-auto">
-<table class="table border-separate mt-40 ml-40">
-    <tr>
-        <th class="border border-gray-400 px-4 py-2">id</th>
-        <th class="border border-gray-400 px-4 py-2">Título</th>
-        <th class="border border-gray-400 px-4 py-2">Fecha Inicio</th>
-        <th class="border border-gray-400 px-4 py-2">Fecha Fin</th>
-        <th class="border border-gray-400 px-4 py-2">Usuario</th>
-        <th class="border border-gray-400 px-4 py-2">Estado</th>
-        <th colspan="2" class="border border-gray-400 px-4 py-2">Acciones</th>
-    </tr>
 
-    
+<body class="bg-slate-200 max-w-screen-lg m-auto">
 
-
-
-    <?php
-    foreach($res as $val){
-    ?>
-    
-
-
-
-    <tr class="bg-gray-400gr">
-        
-        <td class="border border-gray-400 px-4 py-2"><?php echo $val["id"]  ?> </td>
-        <td class="border border-gray-400 px-4 py-2"><?php echo $val["title"]  ?> </td>
-        <td class="border border-gray-400 px-4 py-2"><?php echo $val["startDate"]  ?> </td>
-        <td class="border border-gray-400 px-4 py-2"><?php echo $val["endDate"]  ?> </td>
-        <td class="border border-gray-400 px-4 py-2"><?php echo $val["user"]  ?> </td>
-        <td class="border border-gray-400 px-4 py-2"><?php echo $val["status"]  ?> </td>
-        
-        <td class="border border-gray-400 px-4 py-2 "><a class="link" href="http://localhost/dev/developers-team/web/taskedit?id=<?php echo $val['id']; ?>">Editar  <?php echo $val['id']; ?></a></td>
-
-        <td class="border border-gray-400 px-4 py-2 "><a class="link" href="http://localhost/dev/developers-team/web/taskdelete?id=<?php echo $val['id']; ?>">Eliminar  <?php echo $val['id']; ?></a></td>
-    </tr>
-    <?php
-    }
-?>
-
-</table>
-
-<a class="link px-4 py-2" href="http://localhost/dev/developers-team/web/taskinsert">Insertar</a>
-
-<br>
-
-<!-- <a class="link" href="http://localhost/dev/developers-team/web/tasks">Delete 2 </a> -->
-
-<br>
-
-
+<div class="flex justify-between mt-16 mb-8">
+    <h1 class="text-3xl bold">My Tasks</h1>
+    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add task</button>
 </div>
 
+<div class="flex flex-col">
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Task Name</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assignee</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start Date</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">End Date</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        <th scope="col" class="relative px-6 py-3">
+                            <span class="sr-only">Edit</span>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
 
 
+                    <?php
+                    $model = new Tasks();
+                    $tasks = $model->getTasks();
+                    ?>
 
 
+                    <?php foreach ($tasks as $task): ?>
 
-</form>
 
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?php echo $task['name']; ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo $task['assignee']; ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo $task['startDate']; ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo $task['endDate']; ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><?php echo $task['status']; ?></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <span> / </span>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

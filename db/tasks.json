@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Buy milk",
+    "assignee": "Jane Doe",
+    "startDate": "2012-04-23T18:25:43.511Z",
+    "endDate": "2012-04-23T18:25:43.511Z",
+    "status": "Pending"
+  },
+  {
+    "name": "Do the homework",
+    "assignee": "Pepito Palotes",
+    "startDate": "2012-04-23T18:25:43.511Z",
+    "endDate": "2012-04-23T18:25:43.511Z",
+    "status": "In progress"
+  },
+  {
+    "name": "Brush teeth",
+    "assignee": "Pepe Juan",
+    "startDate": "2012-04-23T18:25:43.511Z",
+    "endDate": "2012-04-23T18:25:43.511Z",
+    "status": "Completed"
+  }
+]
