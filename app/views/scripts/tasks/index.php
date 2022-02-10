@@ -47,12 +47,6 @@
 
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex gap-4">
 
-                                <!-- <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a> -->
-                                <!-- <a href="#" class="text-indigo-600 hover:text-indigo-900">Delete</a> -->
-                                <!--<form action="/app/controllers/taskEditController.php" method="post">
-                                    <button class="text-indigo-600 hover:text-indigo-900" type="submit" name="edit">Edit</button>
-                                </form>-->
-
                                 <form action="/edit" method="post">
                                     <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
                                     <button class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-indigo-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</button>
