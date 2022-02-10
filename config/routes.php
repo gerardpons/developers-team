@@ -17,8 +17,10 @@ $routes = array(
     '/testing' => 'tasks#test',
 	'/taskdelete' => 'tasks#delete',
 	'/taskedit' => 'taskedit#index',
-	'/taskinsert' => 'taskinsert#index',
 	'/taskinsertinsert' => 'taskinsert#insert',
-	'/tasksave' => 'taskEedit#save'
-	
+	'/tasksave' => 'taskEedit#save',
+    '/taskinsert' => 'taskinsert#insert',
+    '/tasks/delete' => 'tasks#delete',
+	'/app/views/scripts/taskInsert/insert.phtml?' => 'taskinsert#insert',
+    '/app/controllers/taskInsertController.php' => 'taskinsert#insert'
 );

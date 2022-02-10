@@ -1,3 +1,7 @@
+<?php
+    require 'app/controllers/taskEditController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
     <fieldset><legend>Edit Task</legend>
 
         <div>
-            <label for="name">Name: <input type="text" name="name" id="name">value="<?php echo $task['name'] ?>"</label>
+            <label for="name">Name: <input type="text" name="name" id="name" value="<?php echo $tasks['name'] ?>"></label>
         </div>
 
         <div>

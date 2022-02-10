@@ -1,25 +1,22 @@
 <?php
+// require_once ROOT_PATH . '/app/models/Tasks.class.php';
+// $model = new Tasks();
+// $tasks = $model->getTasks();
 
 class TasksController extends ApplicationController
 {
-	
+
 	public function indexAction()
 	{
-
-        include ROOT_PATH . '/app/models/Tasks.class.php';
-
-        //$_GET['pepe']="tasks eoeoeeo";
-        echo "Hola desde el controlador de tasks 2<br>";
+        require ROOT_PATH . '/app/models/Tasks.class.php';
 
         $model = new Tasks();
-        // $tasks = $model->getTasks();
+        $tasks = $model->getTasks();
 
-        require ROOT_PATH . '/app/views/scripts/tasks/index.phtml';
-
-       
-        // $this->view->message = "hello from jm::index";
-
+        require ROOT_PATH . '/app/views/scripts/tasks/index.php';
 	}
+
+
 	
 	public function checkAction()
 	{
@@ -39,7 +36,27 @@ class TasksController extends ApplicationController
         
     }
 
-    public function deleteAction(){
+    public function deleteAction()
+    {
+        require __DIR__ . '/../models/Tasks.class.php';
+
+        $model = new Tasks();
+
+        if (!isset($_POST['id'])){
+            echo 'not found';
+            exit;
+        }
+
+        $id = $_POST['id'];
+        $model->deleteTask($id);
+
+        echo 'hehe1';
+        header('Location: /');
+        // header('location:' . ROOT_PATH . '/app/views/scripts/tasks/index.php');
+        echo 'hehe2';
+    }
+
+    /*public function deleteAction(){
        
         
         // llamar al modelo con el id
@@ -52,7 +69,9 @@ class TasksController extends ApplicationController
         header('location:' . "http://localhost/dev/developers-team/web/tasks");
        
         
-    }
+    }*/
 }
+
+require_once ROOT_PATH . '/app/views/scripts/tasks/index.phtml';
 
 ?>

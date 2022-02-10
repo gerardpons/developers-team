@@ -1,6 +1,6 @@
 <?php
 
-class tasksController extends ApplicationController
+class deleteController extends ApplicationController
 {   
     public function indexAction(){
 

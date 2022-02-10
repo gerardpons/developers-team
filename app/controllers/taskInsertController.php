@@ -7,27 +7,56 @@ class taskInsertController extends ApplicationController
 	{
         //$_GET['pepe']="tasks eoeoeeo";
         echo "Hola desde el controlador de Insertar<br>";
-       
         // $this->view->message = "hello from jm::index";
       
 	}
 
-        public function insertAction(){
-        
-                //llamar al modelo para insertar
-                
-                $titulo = $_POST['titulo'];
-                $fechaInicio = $_POST['fechaInicio'];
-                $fechaFin = $_POST['fechaFin'];
-                $usuario = $_POST['usuario'];
-                $estado = $_POST['estado'];
-                
-                echo "Registro insertado :  $titulo $fechaInicio  $fechaFin  $usuario $estado";
-                exit();
+    public function insertAction()
+    {
+        require __DIR__ . '/../models/Tasks.class.php';
 
-                 //volver a la vista    
-                header('location:' . "http://localhost/dev/developers-team/web/tasks");
+        $model = new Tasks();
+
+        $task = [
+            'id' => '',
+            'name' => '',
+            'assignee' => '',
+            'startDate' => '',
+            'endDate' => '',
+            'status' => '',
+        ];
+
+        $errors = [
+            'name' => "",
+            'assignee' => "",
+            'startDate' => "",
+            'endDate' => "",
+            'status' => "",
+        ];
+        $isValid = true;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $task = array_merge($task, $_POST);
+
+            $task = $model->insertTask($_POST);
+
+            header('Location: /');
+
         }
 
+        /*$model = new Tasks();
+        $model->
+
+        $name = $_POST['name'];
+        $startDate = $_POST['startDate'];
+        $endDate = $_POST['endDate'];
+        $assignee = $_POST['assignee'];
+        $status = $_POST['status'];
+
+        echo "Registro insertado :  $name $fechaInicio  $fechaFin  $usuario $estado";
+        exit();*/
+
+        //volver a la vista
+    }
 
 }
