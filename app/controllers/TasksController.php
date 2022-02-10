@@ -1,7 +1,4 @@
 <?php
-// require_once ROOT_PATH . '/app/models/Tasks.class.php';
-// $model = new Tasks();
-// $tasks = $model->getTasks();
 
 class TasksController extends ApplicationController
 {
@@ -32,7 +29,6 @@ class TasksController extends ApplicationController
         
     
         require ROOT_PATH ."/app/views/jm/test.phtml";
-       
         
     }
 
@@ -51,7 +47,6 @@ class TasksController extends ApplicationController
         $model->deleteTask($id);
 
         header('Location: /');
-        // header('location:' . ROOT_PATH . '/app/views/scripts/tasks/index.php');
     }
 
     public function editAction()
@@ -69,25 +64,8 @@ class TasksController extends ApplicationController
         $task = $model->getTaskById($id);
 
         include __DIR__ . '/../../app/views/scripts/tasks/index.php';
-
     }
 
-    /*public function deleteAction(){
-       
-        
-        // llamar al modelo con el id
-        $id = $_GET["id"];
-        echo "record deleted  $id<br>";
-        exit();
-
-
-        //volver a la vista    
-        header('location:' . "http://localhost/dev/developers-team/web/tasks");
-       
-        
-    }*/
 }
 
 require_once ROOT_PATH . '/app/views/scripts/tasks/index.phtml';
-
-?>
