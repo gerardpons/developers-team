@@ -10,17 +10,18 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/test' => 'test#index',
-	'/jm' => 'jm#index',
-	'/leo' => 'jm#test',
-	'/' => 'tasks#index',
-    '/testing' => 'tasks#test',
-	'/taskdelete' => 'tasks#delete',
-	'/taskedit' => 'taskedit#index',
-	'/taskinsertinsert' => 'taskinsert#insert',
-	'/tasksave' => 'taskEedit#save',
-    '/taskinsert' => 'taskinsert#insert',
-    '/tasks/delete' => 'tasks#delete',
-	'/app/views/scripts/taskInsert/insert.phtml?' => 'taskinsert#insert',
-    '/app/controllers/taskInsertController.php' => 'taskinsert#insert'
+
+    '/' => 'tasks#index',
+
+	'/delete' => 'tasks#delete',
+    '/insert' => 'taskinsert#insert',
+    '/edit' => 'taskedit#index',
+    '/save' => 'taskedit#save',
+
+    '/app/controllers/taskEditController.php' => 'taskedit#save',
+    '/app/views/scripts/taskInsert/insert.phtml?' => 'taskinsert#insert',
+    '/app/controllers/taskInsertController.php' => 'taskinsert#insert',
+
+    '/test' => 'test#index'
+
 );

@@ -3,46 +3,32 @@
 
 class taskEditController extends ApplicationController{
 
-	
-	public function indexAction()
-	{
-        require __DIR__ . '/../models/Tasks.class.php';
+
+    public function indexAction()
+    {
+        include __DIR__ . '/../../app/models/Tasks.class.php';
+
+        if (!isset($_POST['id'])) {
+            echo 'id not found';
+            exit;
+        }
+
+        $id = $_POST['id'];
 
         $model = new Tasks();
-        $tasks = $model->getTasks();
+        $task = $model->getTaskById($id);
+
+        include __DIR__ . '/../../app/views/scripts/taskEdit/index.php';
+    }
+
+    public function saveAction()
+    {
+        include __DIR__ . '/../../app/models/Tasks.class.php';
 
         $taskId = $_POST['id'];
 
-        require __DIR__ . '/../views/scripts/taskEdit/edit.phtml';
-	}
-
-    public function editAction()
-    {
-
-        require __DIR__ . '/../models/Tasks.class.php';
-
         $model = new Tasks();
-
-        if (!isset($_GET['id'])) {
-            echo 'not found 1';
-            exit;
-        }
-
-        $taskId = $_GET['id'];
-
         $task = $model->getTaskById($taskId);
-        if (!$task) {
-            echo 'not found 2';
-            exit;
-        }
-
-        $errors = [
-            'name' => "",
-            'assignee' => "",
-            'startDate' => "",
-            'endDate' => "",
-            'status' => "",
-        ];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $task = array_merge($task, $_POST);
@@ -51,10 +37,8 @@ class taskEditController extends ApplicationController{
 
             header("Location: /");
 
-            echo 'Saved';
-
+            echo 'edit saved';
         }
-
     }
 
     /*$id = $_GET['id'];

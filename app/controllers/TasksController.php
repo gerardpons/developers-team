@@ -50,10 +50,26 @@ class TasksController extends ApplicationController
         $id = $_POST['id'];
         $model->deleteTask($id);
 
-        echo 'hehe1';
         header('Location: /');
         // header('location:' . ROOT_PATH . '/app/views/scripts/tasks/index.php');
-        echo 'hehe2';
+    }
+
+    public function editAction()
+    {
+        include __DIR__ . '/../../app/models/Tasks.class.php';
+
+        if (!isset($_POST['id'])) {
+            echo 'id not found';
+            exit;
+        }
+
+        $id = $_POST['id'];
+
+        $model = new Tasks();
+        $task = $model->getTaskById($id);
+
+        include __DIR__ . '/../../app/views/scripts/tasks/index.php';
+
     }
 
     /*public function deleteAction(){

@@ -15,7 +15,7 @@
 
 <div class="flex justify-between mt-16 mb-8">
     <h1 class="text-3xl bold">My Tasks</h1>
-    <form action="/taskinsert">
+    <form action="/insert">
         <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add task</button>
     </form>
 </div>
@@ -56,12 +56,12 @@
                                     <button class="text-indigo-600 hover:text-indigo-900" type="submit" name="edit">Edit</button>
                                 </form>-->
 
-                                <form action="/taskedit" method="post">
-                                    <input type="hidden" name="id" value="<?php $task['id'] ?>">
-                                    <button class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-indigo-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit <?php echo $task['id']; ?></button>
+                                <form action="/edit" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
+                                    <button class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-indigo-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Edit</button>
                                 </form>
 
-                                <form action="/taskdelete" method="post">
+                                <form action="/delete" method="post">
                                     <input type="hidden" name="id" value="<?php echo $task['id'] ?>">
                                     <button class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-red-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Delete</button>
                                 </form>

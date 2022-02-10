@@ -1,34 +1,26 @@
 [
     {
-        "name": "buy milk",
-        "assignee": "jane doe",
-        "startDate": "2022-02-11",
-        "endDate": "2022-02-13",
-        "status": "doing",
-        "id": 1285890
-    },
-    {
-        "name": "buy milk",
-        "assignee": "jane doe",
-        "startDate": "2022-02-11",
-        "endDate": "2022-02-13",
-        "status": "doing",
-        "id": 1901040
-    },
-    {
-        "name": "nova tasca1",
-        "assignee": "jane doe",
+        "name": "Do the homework",
+        "assignee": "Alan Cooper",
         "startDate": "2022-02-22",
         "endDate": "2022-02-26",
-        "status": "completed",
-        "id": 1331032
+        "status": "Pending",
+        "id": "1331032"
     },
     {
-        "name": "in progress task",
-        "assignee": "gerard",
-        "startDate": "2022-02-11",
-        "endDate": "2022-02-12",
+        "name": "Brush my teeth",
+        "assignee": "Leslie Lin",
+        "startDate": "2022-02-18",
+        "endDate": "2022-02-19",
         "status": "In Progress",
-        "id": 1450881
+        "id": "1271106"
+    },
+    {
+        "name": "Buy milk",
+        "assignee": "Jane Doe",
+        "startDate": "2022-02-11",
+        "endDate": "2022-02-13",
+        "status": "Completed",
+        "id": "1542773"
     }
 ]
