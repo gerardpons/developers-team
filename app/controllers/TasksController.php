@@ -12,8 +12,6 @@ class TasksController extends ApplicationController
 
         require ROOT_PATH . '/app/views/scripts/tasks/index.php';
 	}
-
-
 	
 	public function checkAction()
 	{
@@ -21,20 +19,16 @@ class TasksController extends ApplicationController
 	}
 
     public function testAction(){
-        echo "Hola desde testAction";  
-        
+
         echo "WEB_ROOT= " . WEB_ROOT ."<br>";
         echo "ROOT_PATH= " . ROOT_PATH ."<br>";
         echo "CMS_PATH= " . CMS_PATH ."<br>";
-        
-    
-        require ROOT_PATH ."/app/views/jm/test.phtml";
-        
+
     }
 
     public function deleteAction()
     {
-        require __DIR__ . '/../models/Tasks.class.php';
+        require ROOT_PATH . '/app/models/Tasks.class.php';
 
         $model = new Tasks();
 
@@ -51,7 +45,7 @@ class TasksController extends ApplicationController
 
     public function editAction()
     {
-        include __DIR__ . '/../../app/models/Tasks.class.php';
+        include ROOT_PATH . '/app/models/Tasks.class.php';
 
         if (!isset($_POST['id'])) {
             echo 'id not found';
@@ -63,9 +57,7 @@ class TasksController extends ApplicationController
         $model = new Tasks();
         $task = $model->getTaskById($id);
 
-        include __DIR__ . '/../../app/views/scripts/tasks/index.php';
+        include ROOT_PATH . '/app/views/scripts/tasks/index.php';
     }
 
 }
-
-require_once ROOT_PATH . '/app/views/scripts/tasks/index.phtml';

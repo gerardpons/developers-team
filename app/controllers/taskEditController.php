@@ -6,7 +6,7 @@ class taskEditController extends ApplicationController{
 
     public function indexAction()
     {
-        include __DIR__ . '/../../app/models/Tasks.class.php';
+        include ROOT_PATH . '/app/models/Tasks.class.php';
 
         if (!isset($_POST['id'])) {
             echo 'id not found';
@@ -18,12 +18,13 @@ class taskEditController extends ApplicationController{
         $model = new Tasks();
         $task = $model->getTaskById($id);
 
-        include __DIR__ . '/../../app/views/scripts/taskEdit/index.php';
+        include ROOT_PATH . '/app/views/scripts/taskEdit/index.php';
     }
 
     public function saveAction()
     {
-        include __DIR__ . '/../../app/models/Tasks.class.php';
+
+        include ROOT_PATH . '/app/models/Tasks.class.php';
 
         $taskId = $_POST['id'];
 

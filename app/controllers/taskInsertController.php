@@ -10,7 +10,7 @@ class taskInsertController extends ApplicationController
 
     public function insertAction()
     {
-        require __DIR__ . '/../models/Tasks.class.php';
+        require ROOT_PATH . '/app/models/Tasks.class.php';
 
         $model = new Tasks();
 

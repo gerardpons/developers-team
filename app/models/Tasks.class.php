@@ -5,7 +5,7 @@ class Tasks
 
     public function getTasks()
     {
-        return json_decode(file_get_contents(__DIR__ . '/../../db/tasks.json'), true);
+        return json_decode(file_get_contents(ROOT_PATH . '/db/tasks.json'), true);
     }
 
     public function getTaskById($id)
@@ -62,7 +62,7 @@ class Tasks
 
     function putJson($tasks)
     {
-        file_put_contents(__DIR__ . '/../../db/tasks.json', json_encode($tasks, JSON_PRETTY_PRINT));
+        file_put_contents(ROOT_PATH . '/db/tasks.json', json_encode($tasks, JSON_PRETTY_PRINT));
     }
 
 }

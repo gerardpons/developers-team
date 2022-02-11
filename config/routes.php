@@ -18,9 +18,9 @@ $routes = array(
     '/edit' => 'taskedit#index',
     '/save' => 'taskedit#save',
 
-    '/app/controllers/taskEditController.php' => 'taskedit#save',
-    '/app/views/scripts/taskInsert/insert.phtml?' => 'taskinsert#insert',
-    '/app/controllers/taskInsertController.php' => 'taskinsert#insert',
+    // '/app/controllers/taskEditController.php' => 'taskedit#save',
+    // '/app/views/scripts/taskInsert/insert.phtml?' => 'taskinsert#insert',
+    // '/app/controllers/taskInsertController.php' => 'taskinsert#insert',
 
     '/test' => 'test#index'
 

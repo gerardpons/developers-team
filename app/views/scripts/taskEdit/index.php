@@ -16,7 +16,9 @@
     </div>
 
     <div class="mt-8 flex flex-col">
-        <form action="/app/controllers/taskInsertController.php" method="post">
+        <form action="/save" method="post">
+
+            <input type="hidden" name="id" id="id" value="<?php echo $task['id']; ?>">
 
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-gray-700">Task name</label>
@@ -50,7 +52,6 @@
                 <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
                 <div class="mt-1">
                     <select class="p-2 shadow-sm border-gray-300 rounded-md border w-full" name="status" id="status">
-                        <option value="" selected disabled hidden><?php echo $task['status']; ?></option>
                         <option value="Pending">Pending</option>
                         <option value="In Progress">In Progress</option>
                         <option value="Completed">Completed</option>
