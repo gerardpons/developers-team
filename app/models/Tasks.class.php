@@ -23,7 +23,10 @@ class Tasks
     {
         $tasks = $this->getTasks();
 
-        $data['id'] = rand(1000000, 2000000);
+        $last_item = end($tasks);
+        $last_item_id = $last_item['id'];
+
+        $data['id'] = ++$last_item_id;
 
         $tasks[] = $data;
 
