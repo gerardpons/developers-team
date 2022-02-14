@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Do the homework",
+        "assignee": "Alan Cooper",
+        "startDate": "2022-02-22",
+        "endDate": "2022-02-26",
+        "status": "Pending",
+        "id": 1
+    },
+    {
+        "name": "Buy milk",
+        "assignee": "Jane Doe",
+        "startDate": "2022-02-11",
+        "endDate": "2022-02-13",
+        "status": "In Progress",
+        "id": 2
+    },
+    {
+        "name": "Brush teeth",
+        "assignee": "Leslie Lin",
+        "startDate": "2022-03-11",
+        "endDate": "2022-04-11",
+        "status": "Completed",
+        "id": 3
+    }
+]

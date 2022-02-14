@@ -10,5 +10,18 @@
  * '/calendar' => 'calendar#index'
  */
 $routes = array(
-	'/test' => 'test#index'
+
+    '/' => 'tasks#index',
+
+	'/delete' => 'tasks#delete',
+    '/insert' => 'taskinsert#insert',
+    '/edit' => 'taskedit#index',
+    '/save' => 'taskedit#save',
+
+    // '/app/controllers/taskEditController.php' => 'taskedit#save',
+    // '/app/views/scripts/taskInsert/insert.phtml?' => 'taskinsert#insert',
+    // '/app/controllers/taskInsertController.php' => 'taskinsert#insert',
+
+    '/test' => 'test#index'
+
 );

@@ -11,6 +11,7 @@ class Router
 	 */
 	public function execute($routes)
 	{
+
 		// tries to find the route and run the given action on the controller
 		try {
 			// the controller and action to execute
@@ -76,6 +77,8 @@ class Router
 	{
 		// fetches the URI
 		$uri = $this->_getUri();
+		// echo "uri: ".$uri ."<br>";
+		// exit();
 		
 		// if the route isn't defined, try to add a trailing slash
 		if (isset($routes[$uri])) {
@@ -89,6 +92,9 @@ class Router
 			// fetches the current route
 			$routeFound = isset($routes[$uri]) ? $routes[$uri] : false;
 		}
+		//  echo "uri: ".$uri ."<br>";
+		//  var_dump($routeFound);
+		//  exit();
 		
 		// if a matching route was found
 		if ($routeFound) {
